@@ -34,7 +34,7 @@ public class ContratServiceImplTest {
     }
 
     @Test
-    public void testRetrieveAllContrats() {
+     void testRetrieveAllContrats() {
         List<Contrat> mockContrats = new ArrayList<>();
         mockContrats.add(new Contrat(new Date(), new Date(), Specialite.CLOUD, false, 1000));
         when(contratRepository.findAll()).thenReturn(mockContrats);
@@ -45,7 +45,7 @@ public class ContratServiceImplTest {
     }
 
     @Test
-    public void testAddContrat() {
+     void testAddContrat() {
         Contrat contrat = new Contrat(new Date(), new Date(), Specialite.RESEAUX, false, 1500);
         when(contratRepository.save(contrat)).thenReturn(contrat);
 
@@ -55,7 +55,7 @@ public class ContratServiceImplTest {
     }
 
     @Test
-    public void testUpdateContrat() {
+     void testUpdateContrat() {
         Contrat contrat = new Contrat(new Date(), new Date(), Specialite.SECURITE, true, 2000);
         when(contratRepository.save(contrat)).thenReturn(contrat);
 
@@ -65,7 +65,7 @@ public class ContratServiceImplTest {
     }
 
     @Test
-    public void testRetrieveContrat() {
+     void testRetrieveContrat() {
         Integer contratId = 1;
         Contrat contrat = new Contrat(new Date(), new Date(), Specialite.IA, false, 2500);
         when(contratRepository.findById(contratId)).thenReturn(Optional.of(contrat));
@@ -76,7 +76,7 @@ public class ContratServiceImplTest {
     }
 
     @Test
-    public void testRemoveContrat() {
+     void testRemoveContrat() {
         Integer contratId = 1;
         Contrat contrat = new Contrat(new Date(), new Date(), Specialite.IA, false, 2500);
         when(contratRepository.findById(contratId)).thenReturn(Optional.of(contrat));
@@ -86,7 +86,7 @@ public class ContratServiceImplTest {
     }
 
     @Test
-    public void testAffectContratToEtudiant() {
+     void testAffectContratToEtudiant() {
         Integer contratId = 1;
         String nomE = "Doe";
         String prenomE = "John";
