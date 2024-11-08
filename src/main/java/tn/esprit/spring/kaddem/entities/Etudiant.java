@@ -23,9 +23,18 @@ public class Etudiant implements Serializable{
     @OneToMany(mappedBy="etudiant", cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Contrat> Contrats;
+    @ManyToOne
+    @JsonIgnore
+    private Departement departement;
+  //  @ManyToMany(cascade =CascadeType.ALL)
+    @ManyToMany(mappedBy="etudiants")
 
     @JsonIgnore
-
+  //  private Set<Equipe> equipes ;
+    private List<Equipe> equipes ;
+    public Etudiant() {
+        // TODO Auto-generated constructor stub
+    }
 
     public Etudiant(String nomE, String prenomE) {
         this.nomE = nomE;
@@ -47,10 +56,6 @@ public class Etudiant implements Serializable{
         this.op = op;
     }
 
-    public Etudiant() {
-
-    }
-
     public Set<Contrat> getContrats() {
         return Contrats;
     }
@@ -59,6 +64,21 @@ public class Etudiant implements Serializable{
         Contrats = contrats;
     }
 
+    public Departement getDepartement() {
+        return departement;
+    }
+
+    public void setDepartement(Departement departement) {
+        this.departement = departement;
+    }
+
+    public List<Equipe> getEquipes() {
+        return equipes;
+    }
+
+    public void setEquipes(List<Equipe> equipes) {
+        this.equipes = equipes;
+    }
 
     public Integer getIdEtudiant() {
         return idEtudiant;
