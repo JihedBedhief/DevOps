@@ -21,7 +21,6 @@ public class ContratServiceImpl implements IContratService{
 ContratRepository contratRepository;
 @Autowired
 	EtudiantRepository etudiantRepository;
-	
 	public List<Contrat> retrieveAllContrats(){
 		return (List<Contrat>) contratRepository.findAll();
 	}
@@ -42,8 +41,6 @@ ContratRepository contratRepository;
 		Contrat c=retrieveContrat(idContrat);
 		contratRepository.delete(c);
 	}
-
-
 
 	public Contrat affectContratToEtudiant (Integer idContrat, String nomE, String prenomE){
 		Etudiant e=etudiantRepository.findByNomEAndPrenomE(nomE, prenomE);
